@@ -43,7 +43,7 @@ public class EmployeeAction extends ActionBase {
     public void index() throws ServletException, IOException {
 
         //管理者かどうかのチェック //追記
-        if (checkAdmin()) { //追記
+        //if (checkAdmin()) { //追記
 
             //指定されたページ数の一覧画面に表示するデータを取得
             int page = getPage();
@@ -67,7 +67,7 @@ public class EmployeeAction extends ActionBase {
             //一覧画面を表示
             forward(ForwardConst.FW_EMP_INDEX);
 
-        } //追記
+        //} //追記
 
     }
 
@@ -79,13 +79,13 @@ public class EmployeeAction extends ActionBase {
     public void entryNew() throws ServletException, IOException {
 
         //管理者かどうかのチェック //追記
-        if (checkAdmin()) { //追記
+        //if (checkAdmin()) { //追記
             putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
             putRequestScope(AttributeConst.EMPLOYEE, new EmployeeView()); //空の従業員インスタンス
 
             //新規登録画面を表示
             forward(ForwardConst.FW_EMP_NEW);
-        } //追記
+        //} //追記
     }
 
     /**
